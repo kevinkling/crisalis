@@ -10,14 +10,19 @@ import javax.persistence.Table;
 @Entity
 @Table (name = "personas")
 public class Persona {
+	
 	@Id
+	@Column(name = "id_persona")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "dni")
+	
+	@Column(name = "dni", nullable=false, length=30)
 	private int DNI;
-	@Column(name = "nombre")
+	
+	@Column(name = "nombre", nullable=false, length=30)
 	private String nombre;
-	@Column(name = "apellido")
+	
+	@Column(name = "apellido", nullable=false, length=30)	
 	private String apellido;
 
 	public Persona() {

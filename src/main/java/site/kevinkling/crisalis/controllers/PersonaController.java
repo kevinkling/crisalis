@@ -21,10 +21,10 @@ public class PersonaController {
 	@Autowired
 	private IPersonaService service;
 
-	@GetMapping("/")
-	public String welcome() {
-		return "index";
-	}
+//	@GetMapping("/")
+//	public String welcome() {
+//		return "index";
+//	}
 
 	@GetMapping("/clientes")
 	public String listar(Model model) {

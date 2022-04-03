@@ -14,37 +14,55 @@
 <body>
 	<div class="container mt-4">
 		<div>
-			<a th:href="@{/nuevoCliente}" class="btn btn-primary">Nuevo Cliente</a>
+			<a th:href="@{/nuevoServicio}" class="btn btn-primary">Nuevo	Servicio</a>
 			<a th:href="@{/}" class="btn btn-primary">Inicio</a>
 		</div>
 		<table class="table">
 			<thead>
 				<tr>
-					<td>ID</td>
-					<td>DNI</td>
-					<td>NOMBRE</td>
-					<td>APELLIDO</td>
-					<td>ACCIONES</td>
+					<td>Nombre</td>
+					<td>Descripcion</td>
+					<td>Costo Mensual (Impuestos incluidos)</td>
+					<td>Incluye Soporte</td>
+					<td>Acciones</td>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="persona:${personas}">
-					<td th:text="${persona.id}">${persona.id}</td>
-					<td th:text="${persona.DNI}">${persona.DNI}</td>
-					<td th:text="${persona.nombre}">${persona.nombre}</td>
-					<td th:text="${persona.apellido}">${persona.apellido}</td>
+				<tr th:each="servicio:${servicios}">
+					<td th:text="${servicio.nombre}">${servicio.nombre}</td>
+					<td th:text="${servicio.descripcion}">${servicio.descripcion}</td>
+					<td th:text="${servicio.costoMensual}">${servicio.costoMensual}</td>
+					<td th:text="${servicio.incluyeSoporte}">${servicio.incluyeSoporte</td>
 					<td>
-						<a class="btn btn-primary disabled">Adm. Pedido</a>
-						<a th:href="@{/editarCliente/}+${persona.id}" class="btn btn-warning">Editar</a>
-						<a th:onclick="eliminarCliente([[${persona.id}]])" class="btn btn-danger">Eliminar</a>
+						<a th:href="@{/editarServicio/}+${servicio.id}" class="btn btn-primary">EDITAR</a>
+						<a th:onclick="eliminarServicio([[${servicio.id}]])" class="btn btn-primary">ELIMINAR</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="funciones.js"></script>	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
