@@ -36,7 +36,6 @@ public class ServicioController {
 	
 	@PostMapping("/guardarServicio")
 	public String guardarServicio(Servicio s, Model model) {
-		
 		service.guardarServicio(s);
 		return "redirect:/listarServicios";
 	}

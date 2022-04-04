@@ -18,8 +18,7 @@ public class ServicioService implements IServicioService{
 	
 	@Override
 	public List<Servicio> listarServicios() {
-		List<Servicio> servicios = (List<Servicio>) iServicio.findAll();
-		return servicios;
+		return (List<Servicio>) iServicio.findAll();
 	}
 
 	@Override
